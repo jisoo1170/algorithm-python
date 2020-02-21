@@ -25,7 +25,3 @@ def solution(number, k):
         collected = collected[:-k]
     answer = "".join(collected)
     return answer
-
-
-if __name__ == "__main__":
-    solution(input)

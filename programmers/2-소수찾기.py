@@ -2,14 +2,6 @@ import pytest
 from itertools import permutations
 
 
-@pytest.mark.parametrize("numbers, expected", [
-    # ("17", 3),
-    ("011", 2)
-])
-def test_simple(numbers, expected):
-    assert solution(numbers) == expected
-
-
 # def check_prime(arr, length):
 #     sum = 0
 #     arr = set(map(int, arr))
@@ -27,8 +19,9 @@ def test_simple(numbers, expected):
 
 
 # def solution(numbers):
-#     answer = 0
+#     answer = 0˜
 #     for i in range(1, len(numbers)+1):
+#         # 순열을 만들어주는 함수
 #         num_list = set(map(''.join, permutations(numbers, i)))
 #         answer += check_prime(num_list, i)
 #     return answer
@@ -47,5 +40,9 @@ def solution(n):
     return 0
 
 
-if __name__ == "__main__":
-    solution(input)
+@pytest.mark.parametrize("numbers, expected", [
+    # ("17", 3),
+    ("011", 2)
+])
+def test_simple(numbers, expected):
+    assert solution(numbers) == expected
