@@ -15,9 +15,8 @@ def quick(li):
         elif l > pivot:
             right.append(l)
     left = quick(left)
-    left.append(pivot)
     right = quick(right)
-    return left+right
+    return left+[pivot]+right
 
 
 if __name__ == "__main__":
