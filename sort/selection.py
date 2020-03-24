@@ -4,13 +4,14 @@ def selection(li):
         min_idx = -1
         min = li[i]
         # 최솟값을 찾는 for문
-        for j in range(i, len(li)-1):
+        for j in range(i, len(li)):
             if min > li[j]:
                 min = li[j]
                 min_idx = j
         # 최솟값을 정렬된 뒷부분에 추가
-        li[i], li[min_idx] = li[min_idx], li[i]
-        print(li, i, min_idx)
+        if min_idx != -1:
+            # print(li, i, min_idx, li[min_idx])
+            li[i], li[min_idx] = li[min_idx], li[i]
 
 
 if __name__ == "__main__":
