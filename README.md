@@ -7,7 +7,7 @@ python 기반 테스트 프레임워크. leetcode, programmers 는 웹 ide를 �
 ## getting started
 
 ```python
-$ pip install -U pytest
+pip install -U pytest
 ```
 
 바로 깔림! 
@@ -23,58 +23,30 @@ $ pip install -U pytest
 매번 pytest 를 치기 귀찮을경우 계속 돌려놓을 수 있다 
 
 ```python
-$ pip install pytest-watch
+pip install pytest-watch
 ```
 
 `ptw` 명령어를 치면 시작하는데, 테스트 파일이 바뀌면 자동으로 테스트를 실행해준다. 
 
+하나의 파일을 실행하고 싶을 때는 pytest `-.py`를 입력하면 된다. 파일 명에 test가 들어가지 않아도 된다.
 
 
 ## example
 
-알고리즘 짠 코드 
-
 ```python
-input = []
-output = 2
-
-def test_simple():
-    assert solution(input) == expected
-
-
-def solution(nums):
-    """code"""
-    return 11
-
-if __name__ == "__main__":
-    solution(input)
-```
-
-
-sample
-
-```python
-@pytest.mark.parametrize("base, expected", [
-    (10, [3, 9]),
-    (3, [2]),
-    (9, [2, 4, 8]),
-    (26, [5, 25]),
-    (30, [29])
-])
-def test_simple(base, expected):
-    assert solution(base) == expected
+import pytest
 
 
 def solution(base):
-    arr = []
-    for i in range(2, base):
-        if (base - 1) % i == 0:
-            arr.append(i)
-    return arr
+    # your code here
 
 
-if __name__ == "__main__":
-    solution(input)
+@pytest.mark.parametrize("base, expected", [
+    (10, [3, 9]),
+    (3, [2])
+])
+def test_simple(base, expected):
+    assert solution(base) == expected
 ```
 
 
