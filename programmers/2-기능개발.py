@@ -29,3 +29,21 @@ def solution(progresses, speeds):
 ])
 def test_simple(progresses, speeds, expected):
     assert solution(progresses, speeds) == expected
+
+
+"""
+큐를 이용해서 풀었다.
+
+먼저 각 기능의 배포 날짜를 계산하고, 한 번에 몇개가 가능한지 구해준다.
+한번에 가능한 갯수는 뒤에 더 큰 값이 나오기 전까지다.
+
+
+다른 사람의 풀이를 보니 max 변수를 따로 지정하지 않고 앞 뒤 값을 비교해도 됐을 것 같다.
+
+if daysLeft[i] < daysLeft[i + 1]:
+    retList.append(count)
+    count = 1
+else:
+    daysLeft[i + 1] = daysLeft[i]
+    count += 1
+"""

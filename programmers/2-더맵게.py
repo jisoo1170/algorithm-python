@@ -22,3 +22,13 @@ def solution(scoville, K):
 ])
 def test_simple(scoville, K, expected):
     assert solution(scoville, K) == expected
+
+
+"""
+python의 heapq 라이브러리를 이용해서 아주 아주 간단하게 풀었다.
+최소힙을 구현해 놓은 것으로 자동으로 계속 정렬을 해준다.
+
+heapq 리스트에서 첫 번째와 두 번째 값을 꺼내서 계산 한 다음, 다시 리스트에 넣어주면 된다.
+
+while문이 멈추는 때는 heapq의 처음 값이 K랑 같거나 클 때이다.
+"""

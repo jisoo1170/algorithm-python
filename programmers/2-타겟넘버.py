@@ -32,3 +32,15 @@ def drf(numbers, idx):
 ])
 def test_simple(numbers, target, expected):
     assert solution(numbers, target) == expected
+
+
+"""
+재귀호출을 이용해서 구현했다.
+사실 이것도 처음에는 어떻게 풀어야하는지 감이 안왔다.
+
+역시 풀이는 생각보다 쉬웠다.
+
+곱하기1 인 경우와 곱하기-1 인 경우를 나눠서 재귀호출을 계속 돌면 됐다.
+재귀를 돌다가 idx가 마지막에 오면 numbers의 합을 계산한다.
+그 합이 target과 같으면 answer에 1을 더해주고 retrun 한다.
+"""
